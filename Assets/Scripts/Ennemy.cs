@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class Ennemy : MonoBehaviour
 {
-    public GameObject coin;
     public float speed;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,11 +20,17 @@ public class Ennemy : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(gameObject);
-        int bonusRange = Random.Range(0, 20);
-        if (bonusRange >= 14)
+        if (collision.gameObject.tag == "Ennemy")
         {
-            Instantiate(coin, transform.position, transform.rotation);
+            print("aled");
+            Destroy(gameObject);
         }
+
+        if (collision.gameObject.tag == "Bullet")
+        {
+            Destroy(gameObject);
         }
+    }
+
+
 }

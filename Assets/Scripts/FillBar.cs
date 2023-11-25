@@ -5,18 +5,18 @@ using UnityEngine.UI;
 
 public class FillBar : MonoBehaviour
 {
-    public Slider monSlider;
+    public Slider mySlider;
     public int charge = 0;
     // Start is called before the first frame update
     void Start()
     {
-        monSlider.value = 0;        
+        mySlider.value = 0;        
     }
 
     // Update is called once per frame
     void Update()
     {
-        monSlider.value = charge;
+        mySlider.value = charge;
         if (Input.GetKey(KeyCode.Space))
         {
             if (charge < 100)

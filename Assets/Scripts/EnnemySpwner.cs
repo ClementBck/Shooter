@@ -9,7 +9,9 @@ public class EnnemySpwner : MonoBehaviour
     public float speed = 1f;
     public Transform limitL;
     public Transform limitR;
-    // Start is called before the first frame update
+    public Movement myPlayer;
+    // Start is called before the f
+    // First frame update
     void Start()
     {
         
@@ -19,10 +21,12 @@ public class EnnemySpwner : MonoBehaviour
     void Update()
     {
         timerA++;
-        if (timerA >= 30)
+        if (timerA >= 70)
         {
+            Instantiate(ennemyToSpawn, transform.position, transform.rotation);
             timerA = 0;
             int random1 = Random.Range(-5, 6);
+
             if (random1 <= 0)
             {
                 transform.position += Vector3.left * speed;
@@ -31,7 +35,6 @@ public class EnnemySpwner : MonoBehaviour
             {
                 transform.position += Vector3.right * speed;
             }
-            print(random1);
         }
 
         if (transform.position.x < limitL.position.x)

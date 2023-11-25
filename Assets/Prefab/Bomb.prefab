@@ -161,8 +161,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2ae9a645e2c544197fb93a7b625795, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monRigidBody: {fileID: 6304765489258203121}
-  monTransform: {fileID: 6632409755156478750}
+  myRigidBody: {fileID: 6304765489258203121}
+  myTransform: {fileID: 6632409755156478750}
   supernova: {fileID: 6484444848503645310, guid: 2740141cbbb8b0f42b85eb40968edc81, type: 3}
   scaling: 0.02
   speed: 5

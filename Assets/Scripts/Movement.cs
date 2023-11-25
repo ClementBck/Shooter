@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Movement : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class Movement : MonoBehaviour
     public Transform limitL;
     public Transform limitR;
     public int charge = 0;
+    public int score = 0;
+    public int hp = 3;
+    public TextMeshProUGUI textRef;
 
     public float speed = 0.2f;
 
@@ -35,7 +39,8 @@ public class Movement : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(bullet, parent.position, parent.rotation);
+            GameObject createdBullet = Instantiate(bullet, parent.position, parent.rotation);
+            createdBullet.GetComponent<Bullet>().myPlayer = this;
             charge = 0;
         }
         
@@ -46,7 +51,6 @@ public class Movement : MonoBehaviour
             {
                 charging.Play();
                 charge++;
-                print(charge);
             }
         }
 
@@ -74,12 +78,15 @@ public class Movement : MonoBehaviour
         {
             transform.position = new Vector3(limitL.position.x, transform.position.y, transform.position.z);
         }
+
+        textRef.text = "score : " + score;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "bonus")
         {
+            score += 50;
             Destroy(other.gameObject);
         }
     }

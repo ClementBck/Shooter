@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class Bomb : MonoBehaviour
 {
-    public Rigidbody2D monRigidBody;
-    public Transform monTransform;
+    public Rigidbody2D myRigidBody;
+    public Transform myTransform;
     public GameObject supernova;
     public float scaling = 0.02f;
     public float speed;
     // Start is called before the first frame update
     void Start()
     {
-        monRigidBody.velocity = Vector3.up * speed;
+        myRigidBody.velocity = Vector3.up * speed;
     }
 
     private void Update()
     {
-        monTransform.localScale += new Vector3(scaling, scaling, 0);
+        myTransform.localScale += new Vector3(scaling, scaling, 0);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7648189001331404202}
   - component: {fileID: 8650566655662361808}
   - component: {fileID: -3395651757783323034}
+  - component: {fileID: -2392893965274245761}
   m_Layer: 0
   m_Name: Hexagon Flat-Top
   m_TagString: Ennemy
@@ -150,4 +151,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coin: {fileID: 8016895939323356867, guid: 596d40c526961684e8362250f5413797, type: 3}
-  speed: 0.008
+  speed: 0.01
+  myPlayer: {fileID: 6986389138342840196, guid: effbcc72a6283eb4590624d283cdddea, type: 3}
+--- !u!50 &-2392893965274245761
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6128441405271233860}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
